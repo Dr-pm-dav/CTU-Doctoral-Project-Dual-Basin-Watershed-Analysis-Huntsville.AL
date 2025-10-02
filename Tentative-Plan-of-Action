@@ -1,0 +1,63 @@
+### :earth_americas: TENATIVE AND REITERATIVE :potable_water:
+## A reproducible, GPU-ready stack that anyone can run: VS Code + Docker + WSL2 (Ubuntu/Debian) + CUDA, with (a) a FastAPI microservice, (b) a TiTiler tile server, and (c) a GPU-enabled JupyterLab for a personal notebook. Included is a COG smoke test, allowing tiles to be viewed in Cesium immediately.
+
+# Watershed Water-Extent & Turbidity ML Pipeline (HLS v2)
+End-to-end, reproducible pipeline for:
+1) **Real-time data pulls** (NASA HLS v2 via Google Earth Engine)
+2) **Monthly composites** with NDWI/MNDWI and strict cloud/water masking
+3) **Chip generation** + auto water masks, HUC-12 indexing & Spatial+ folds
+4) **U-Net segmentation** (AMP/scheduler/grad-clip, TensorBoard)
+5) **Raster inference → GeoTIFF/COG** and **WER** aggregation
+6) **Turbidity regression** (LightGBM + quantile PIs)
+7) **Spatial+ CV & cross-basin** evaluation
+8) **Consolidated report** (plots + optional PDF via pandoc)
+
+# **One-time machine setup (Windows 10/11 with WSL2)**
+  1.	Install/verify NVIDIA GPU driver (Windows)
+  2.	Enable WSL2 + Ubuntu
+  3.	Install NVIDIA CUDA for WSL (gives Linux containers GPU access)
+  4.	Docker Desktop settings
+    a. Set settings to General
+    b. Resources should include WSL Integration
+    c. Enable GPU in Resources
+  5. Install VS Code extensions
+    a. Dev Containers
+    b. WSL
+    c. Python
+    d. Docker
+
+# **Make a clean, reproducible project**
+  1. Create a new folder
+  2. Create folder/file structure
+  3. Write/insert code for specific files
+
+# **Single command start-up**
+  1. Open project in VS Code
+  2. Open a terminal
+  3. Start the stack to build + run
+  4. Check the build
+  5. Create test COG
+  6. View tiles in Cesium
+  7. Open GPU JupyterLab
+  8. Verify GPU inside Jupyter
+  9. Run a notebook cell
+
+# Optimize stack if necessary + troubleshoot
+  1. Check Cesium template for typos
+  2. GPU fails in notebook
+  3. Python imports errors - check for package compatibility 
+  4. Port is in use
+
+# Data addition
+  1. Add database to stack
+  2. Log API requests using FastAPI
+  3. Log all events from API endpoints
+  4. Log from notebook(s)
+  5. Run verifications using SQL and pgAdmin
+  6. Perform housekeeping procedures periodically
+
+
+
+
+*Keywords*: Geospatial monitoring; Watershed comparison; Remote sensing; Environmental change detection; Hydrological systems
+*Skills + Tech*: Bash, Python, R, Docker, VS Code, Cesium, FastAPI, Jupyter, GitHub, SQL, CUDA, Sci-kit Learn, TensorFlow, Linux, AI, ML, U-Net, WSL, Google Earth Engine
